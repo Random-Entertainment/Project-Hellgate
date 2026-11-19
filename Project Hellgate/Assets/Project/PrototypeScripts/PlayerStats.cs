@@ -58,4 +58,22 @@ public class PlayerStats : MonoBehaviour
             soulCountText.text = "Demon Souls: " + soulCount;
         }
     }
+
+    public void SpendSouls(int amount)
+    {
+        soulCount -= amount;
+        UpdateSoulUI();
+    }
+
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        
+        if(currentHealth > maxHealth)
+        {
+            currentHealth= maxHealth;
+        }
+
+        UpdateHealthUI();
+    }
 }
